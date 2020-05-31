@@ -1,0 +1,21 @@
+{
+	"filenames" : {
+		"service_file": "theme.service",
+		"desktop_file": "theme-switcher.desktop",
+		"initial_setup_file": "initial_setup",
+		"current_theme_file" : "current_theme",
+		"theme_collection_file" : "themes.json"
+	},
+	"files": {
+		"service_file": "{}/../../../../../.config/systemd/user/theme.service",
+		"desktop_file": "{}/../../../../../.config/autostart/theme-switcher.desktop",
+		"initial_setup_file": "{}/../../../../share/theme-switcher/initial_setup",
+		"current_theme_file" : "{}/../../../../share/theme-switcher/current_theme",
+		"theme_collection_file" : "{}/../../../../share/theme-switcher/themes.json"
+	},
+	"paths": {
+		"share_path" : "{}/../../../../share/theme-switcher/",
+		"systemd_user_service_path": "{}/../../../../../.config/systemd/user/",
+		"autostart_desktop_file_path": "{}/../../../../../.config/autostart/"
+	}
+}

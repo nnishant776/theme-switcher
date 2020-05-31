@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Automatic Theme Switcher
+Exec=xterm -e "bash -c \"systemctl --user restart theme.service\""
+Type=Application
+StartupNotify=false
+Terminal=false

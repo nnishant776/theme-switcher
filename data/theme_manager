@@ -1,0 +1,60 @@
+#!/usr/bin/bash
+
+usage() {
+    progname=`basename $0`
+cat << EOF
+
+Usage: 
+
+$progname --help  Display this help print
+
+$progname --initial-setup  Do initial setup before activating theme switcher
+
+$progname --set-theme THEME  Set the one of the themes listed in the themes.json
+
+$progname --uninstall  Uninstall the theme switcher
+
+$progname --edit-themes  Edit/Add to the list of themes and its variants known to the program 
+
+EOF
+}
+
+main() {
+    while [ $# -gt 0 ]
+    do
+        case $1 in
+            "--help")
+                usage
+                ;;
+
+            "--initial-setup")
+            	theme_switcher --initial-setup
+                systemctl --user daemon-reload
+                ;;
+
+            "--set-theme")
+                shift
+                echo $1 > $(dirname $0)/../share/theme-switcher/current_theme
+                systemctl --user restart theme.service
+                ;;
+
+            "--uninstall")
+            	rm $HOME/.config/autostart/theme-switcher.desktop
+                rm $HOME/.config/systemd/user/theme.service
+                pip uninstall theme_switcher
+                ;;
+
+            "--edit-themes")
+                [[ -z $EDITOR ]] && EDITOR=vi
+                $EDITOR $HOME/.local/share/theme-switcher/themes.json
+                ;;
+
+            "*")
+                echo "Invalid argument. Command failed."
+                ;;
+        esac
+        shift
+    done
+}
+
+main $@

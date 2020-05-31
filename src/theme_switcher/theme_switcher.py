@@ -1,0 +1,96 @@
+#!/usr/bin/python
+import os
+import shutil
+import json
+import sys
+
+from gi.overrides import Gio, GLib
+from pydbus import SessionBus
+
+from .theme_manager import ThemeManager, DBusNightLightManager
+
+share_path = "{}/../../../../share/theme-switcher/".format(os.path.dirname(__file__))
+
+def get_system_theme() -> str:
+    with open(share_path + 'config.json') as path_config_file:
+        install_config = json.load(path_config_file)
+        file_list = install_config['files']
+        path_list = install_config['paths']
+        
+    theme_name = 'Adwaita'
+    here_path = os.path.dirname(__file__)
+    with open(file_list['current_theme_file'].format(here_path), 'r', encoding='utf-8') as theme_name_file:
+        theme_name = theme_name_file.readline().strip()
+        # print(theme_name)
+    return theme_name
+
+
+def initial_setup():
+    here_path = os.path.dirname(__file__)
+    
+    with open(share_path + 'config.json') as path_config_file:
+        install_config = json.load(path_config_file)
+        file_list = install_config['files']
+        path_list = install_config['paths']
+        file_name_list = install_config['filenames']
+        
+        for key in file_list.keys():
+            file_list[key] = file_list[key].format(here_path)
+            
+        for key in path_list.keys():
+            path_list[key] = path_list[key].format(here_path)
+        
+        
+    with open(file_list['initial_setup_file'], 'r') as initial_setup_data:
+        setup_done = initial_setup_data.read().strip()
+            
+    if setup_done == '0':
+        
+        try:
+            os.mkdir(path_list['systemd_user_service_path'])
+            os.mkdir(path_list['autostart_desktop_file_path'])
+        except FileExistsError as e:
+            print("File already exists")
+            print(e)
+            
+        shutil.copyfile(share_path + file_name_list['service_file'], file_list['service_file'])
+        shutil.copyfile(share_path + file_name_list['desktop_file'], file_list['desktop_file'])
+        os.remove(share_path + file_name_list['service_file'])
+        os.remove(share_path + file_name_list['desktop_file'])
+        
+        with open(file_list['initial_setup_file'], 'w') as initial_setup_data:
+            initial_setup_data.write('1')
+
+        
+def main():
+    
+    # do initial setup
+    if len(sys.argv) >= 2 and sys.argv[1] == '--initial-setup':
+        initial_setup()
+        sys.exit(0)
+    
+    # event loop object
+    loop = GLib.MainLoop()
+
+    # get session bus instance
+    session_bus = SessionBus()
+
+    # obtain DBus NightLight manager service instance
+    DBusNightLightManager.create(session_bus)
+
+    # Set theme in the Theme Manager
+    ThemeManager.setThemeName(get_system_theme())
+
+    # Apply theme according to the current night light status
+    ThemeManager.applyTheme()
+
+    # start event loop with support to exit gracefully using Ctrl-C
+    try:
+        loop.run()
+    except KeyboardInterrupt as e:
+        loop.quit()
+        print("\nExit by Control C")
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,114 @@
+{
+	"Deepin": [
+		{
+			"gtk-theme": "deepin",
+			"icon-theme": "deepin",
+			"cursor-theme": "breeze_cursors",
+			"name": "Materia-light"
+		},
+		{
+			"gtk-theme": "deepin-dark",
+			"icon-theme": "deepin-dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Materia-dark"
+		}
+	],
+	"Materia": [
+		{
+			"gtk-theme": "Materia-light-compact",
+			"icon-theme": "breeze",
+			"cursor-theme": "breeze_cursors",
+			"name": "Materia-light"
+		},
+		{
+			"gtk-theme": "Materia-dark-compact",
+			"icon-theme": "breeze-dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Materia-dark"
+		}
+	],
+	"Breeze": [
+		{
+			"gtk-theme": "Breeze",
+			"icon-theme": "breeze",
+			"cursor-theme": "breeze_cursors",
+			"name": "Materia-light"
+		},
+		{
+			"gtk-theme": "Breeze-Dark",
+			"icon-theme": "breeze-dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Materia-dark"
+		}
+	],
+	"Mojave": [
+		{
+			"gtk-theme": "Mojave-light",
+			"icon-theme": "La-Capitaine-Light",
+			"cursor-theme": "breeze_cursors",
+			"name": "Mojave-light"
+		},
+		{
+			"gtk-theme": "Mojave-dark",
+			"icon-theme": "La-Capitaine-Dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Mojave-dark"
+		}
+	],
+	"Sierra": [
+		{
+			"gtk-theme": "High-Sierra",
+			"icon-theme": "La-Capitaine-Light",
+			"cursor-theme": "breeze_cursors",
+			"name": "Mojave-light"
+		},
+		{
+			"gtk-theme": "High-Sierra-Dark",
+			"icon-theme": "La-Capitaine-Dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Mojave-dark"
+		}
+	],
+	"Catalina": [
+		{
+			"gtk-theme": "High-Sierra",
+			"icon-theme": "MacOs-Catalina-Light",
+			"cursor-theme": "breeze_cursors",
+			"name": "Mojave-light"
+		},
+		{
+			"gtk-theme": "High-Sierra-Dark",
+			"icon-theme": "MacOs-Catalina-Dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Mojave-dark"
+		}
+	],
+	"Adapta": [
+		{
+			"gtk-theme": "Adapta-Eta",
+			"icon-theme": "breeze",
+			"cursor-theme": "breeze_cursors",
+			"name": "Adapta"
+		},
+		{
+			"gtk-theme": "Adapta-Nokto-Eta",
+			"icon-theme": "breeze-dark",
+			"cursor-theme": "Breeze_Snow",
+			"name": "Adapta-Nokto"
+		}
+	],
+	"Adwaita": [
+		{
+			"gtk-theme": "Adwaita",
+			"icon-theme": "Adwaita",
+			"cursor-theme": "Adwaita",
+			"name": ""
+		},
+		{
+			"gtk-theme": "Adwaita-dark",
+			"icon-theme": "Adwaita",
+			"cursor-theme": "Adwaita",
+			"name": ""
+		}
+	]
+}
