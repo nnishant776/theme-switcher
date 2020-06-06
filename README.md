@@ -40,9 +40,9 @@ This will configure the program for autostart and install a systemd service file
 ----
 ## Usage
 
-By default, the program is configured to use the Adwaita's light and dark theme variants. To use your own theme, you can define the light and dark sets of the said theme in `$HOME/.local/share/theme-switcher/config.json` file, either manually or by using `theme_manager --edit-themes`. This command will open `config.json` file in your preferred editor, if one is set in environment, otherwise it will open the file using `vi`.
+By default, the program is configured to use the Adwaita's light and dark theme variants. To use your own theme, you can define the light and dark sets of the said theme in `$HOME/.local/share/theme-switcher/themes.json` file, either manually or by using `theme_manager --edit-themes`. This command will open `themes.json` file in your preferred editor, if one is set in environment, otherwise it will open the file using `vi`.
 
-If your theme is already defined in `config.json`, then you can directly set the theme using `theme_manager --set-theme THEME_NAME`. Make sure both light and dark variants of the theme are defined, otherwise it won't work. When the theme is set, it will automatically switch between the light and dark variants according to night light status (if enabled).
+If your theme is already defined in `themes.json`, then you can directly set the theme using `theme_manager --set-theme THEME_NAME`. Make sure both light and dark variants of the theme are defined, otherwise it won't work. When the theme is set, it will automatically switch between the light and dark variants according to night light status (if enabled).
 
 ----
 ## Defining themes
