@@ -21,7 +21,6 @@ setup(
             [
                 'data/current_theme',
                 'data/initial_setup',
-                'data/theme.service',
                 'data/theme-switcher.desktop',
                 'data/themes.json',
                 'data/config.json'
