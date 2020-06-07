@@ -44,7 +44,9 @@ class DBusNightLightManager(object):
 
 
 class ThemeManager(object):
-
+    '''
+    This class manages the current theme to be applied
+    '''
     _instance = None
 
     def __new__(cls, *args, **kwargs):
