@@ -4,11 +4,15 @@ setup(
     name='theme_switcher',
     version='0.1',
     author='Neeraj Nishant',
+    license='GPLv3',
+    install_requires=[
+        'PyGObject',
+        'wxPython'
+    ],
     description='An application to switch between light/dark themes based on various conditions',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Consumers',
-        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',

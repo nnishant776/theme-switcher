@@ -1,10 +1,9 @@
 import json
 import os
 
-
 class Theme(object):
 
-    _theme_collection = json.load(open("{}/../../../../share/theme-switcher/themes.json".format(os.path.dirname(__file__))))
+    _theme_collection = json.load(open("{}/../../../../share/theme-switcher/themes.json".format(os.path.dirname(__file__)),'r'))
 
     def __init__(self, theme_name: str):
         
