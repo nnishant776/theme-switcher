@@ -46,7 +46,7 @@ main() {
 
             "--edit-themes")
                 [[ -z $EDITOR ]] && EDITOR=vi
-                $EDITOR $HOME/.local/share/theme-switcher/themes.json
+                $EDITOR $(dirname $0)/../share/theme-switcher/themes.json
                 ;;
 
             "*")
