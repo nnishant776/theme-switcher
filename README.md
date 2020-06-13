@@ -15,27 +15,27 @@ To install and run this program, you need to have  at least [Python 3](http://ww
 
 If you want to build and install the package manually, you need to have `setuptools` and `wheel` packages installed on your computer. You can check if you have these packages by running following command.
 
-    pip3 list | grep -iE "wheel|setuptools"
+    $ pip3 list | grep -iE "wheel|setuptools"
 
 In case you don't have these packages installed, run following commands in order to install them.
 
-    python3 -m pip3 install --user setuptools wheel
+    $ python3 -m pip3 install --user setuptools wheel
 
 After the installation of these packages, clone this repository in any directory of your choice by using following command.
 
-    git clone https://github.com/nnishant776/theme-switcher.git
+    $ git clone https://github.com/nnishant776/theme-switcher.git
  
 Then navigate to the newly created directory `theme-switcher`
     
-    cd theme-switcher/
+    $ cd theme-switcher/
 
 Then run:
 
-    python3 setup.py bdist_wheel
+    $ python3 setup.py bdist_wheel
 
 Above command will create a file with `.whl` extension in `dist` folder. Then run the following command.
 
-    pip3 install dist/*.whl
+    $ pip3 install dist/*.whl
 
 This will install the program as a non-privileged user. The program will run automatically at startup after user login once configured. See the next section for configuration.
 
@@ -43,21 +43,21 @@ This will install the program as a non-privileged user. The program will run aut
 ## Configuration
 After the installation, a bash script file named theme_manager will be present in `$HOME/.local/bin` directory. The help output for this script is shown below.
 
+```
+$ theme_manager --help
 
-    $ theme_manager --help
+Usage: 
 
-    Usage: 
+theme_manager --help  Display this help print
 
-    theme_manager --help  Display this help print
+theme_manager --initial-setup  Do initial setup before activating theme switcher
 
-    theme_manager --initial-setup  Do initial setup before activating theme switcher
+theme_manager --set-theme THEME  Set the one of the themes listed in the themes.json
 
-    theme_manager --set-theme THEME  Set the one of the themes listed in the themes.json
+theme_manager --uninstall  Uninstall the theme switcher
 
-    theme_manager --uninstall  Uninstall the theme switcher
-
-    theme_manager --edit-themes  Edit/Add to the list of themes and its variants known to the program
-
+theme_manager --edit-themes  Edit/Add to the list of themes and its variants known to the program
+```
 To configure, first run
 
 `theme_manager --initial-setup`
@@ -76,25 +76,24 @@ If your theme is already defined in `themes.json`, then you can directly set the
 
 Below is a sample definition of a theme
 
-
-    {
-        "Adwaita": [
-            {
-                "gtk-theme": "Adwaita",
-                "icon-theme": "Adwaita",
-                "cursor-theme": "Adwaita",
-                "name": ""
-            },
-            {
-                "gtk-theme": "Adwaita-dark",
-                "icon-theme": "Adwaita",
-                "cursor-theme": "Adwaita",
-                "name": ""
-            }
-        ]
-    }
-
-
+```
+{
+    "Adwaita": [
+        {
+            "gtk-theme": "Adwaita",
+            "icon-theme": "Adwaita",
+            "cursor-theme": "Adwaita",
+            "name": ""
+        },
+        {
+            "gtk-theme": "Adwaita-dark",
+            "icon-theme": "Adwaita",
+            "cursor-theme": "Adwaita",
+            "name": ""
+        }
+    ]
+}
+```
 Below is an explanation of the fields:
 
 * **gtk-theme** : The name of GTK application theme which decoreates the windows and controls
