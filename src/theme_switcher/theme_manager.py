@@ -4,6 +4,10 @@ from pydbus import SessionBus
 
 
 class DBusNightLightManager(object):
+    '''
+    This class manages the handle to the systems DBus instance which manages the color temperature. 
+    It also processes and listens for the different events fired by DBus object when time changes.
+    '''
     _instance = None
 
     def __new__(cls, *args, **kwargs):
