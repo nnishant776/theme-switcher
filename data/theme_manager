@@ -4,17 +4,19 @@ usage() {
     progname=`basename $0`
 cat << EOF
 
-Usage: 
+Usage: $progname [options]
 
-$progname --help  Display this help print
+Options:
 
-$progname --initial-setup  Do initial setup before activating theme switcher
+    --help  Display this help print
 
-$progname --set-theme THEME  Set the one of the themes listed in the themes.json
+    --initial-setup  Do initial setup before activating theme switcher
 
-$progname --uninstall  Uninstall the theme switcher
+    --set-theme THEME  Set the one of the themes listed in the themes.json
 
-$progname --edit-themes  Edit/Add to the list of themes and its variants known to the program 
+    --uninstall  Uninstall the theme switcher
+
+    --edit-themes  Edit/Add to the list of themes and its variants known to the program 
 
 EOF
 }
@@ -58,3 +60,4 @@ main() {
 }
 
 main $@
+
