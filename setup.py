@@ -7,7 +7,7 @@ setup(
     license='GPLv3',
     install_requires=[
         'PyGObject',
-        'wxPython'
+        'pydbus'
     ],
     description='An application to switch between light/dark themes based on various conditions',
     classifiers=[
@@ -37,7 +37,7 @@ setup(
             ]
         )
     ],
-    python_requires='>=3.5, <4',
+    python_requires='>=3.5',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
     entry_points={
